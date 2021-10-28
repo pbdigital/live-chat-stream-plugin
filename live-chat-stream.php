@@ -80,3 +80,17 @@ function run_live_chat_stream() {
 
 }
 run_live_chat_stream();
+
+
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/pbdigital/live-chat-stream-plugin.git',
+	__FILE__,
+	'live-chat-stream'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');
+
+//Optional: If you're using a private repository, specify the access token like this:
+//$myUpdateChecker->setAuthentication('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');
