@@ -1,0 +1,119 @@
+.live_event_stream {
+    border-radius:8px;
+    overflow: hidden;
+    height: calc(100vh - 200px);
+    display: flex;
+    flex-direction:column;
+}
+.live_event_stream .heading {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: #FFFFFF;
+    padding:12px 10px 18px;
+}
+.live-comments {
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+    padding: 16px;
+    overflow: auto;
+    height: calc(100vh - 366px);
+    overflow: auto;
+}
+.live-comments .loading {
+    text-align:center;
+}
+.live-comments .welcome{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 19px;
+}
+.live_event_comments {
+    display:grid;
+    grid-template-columns: minmax(0,1fr);
+    grid-gap: 24px;
+}
+.live_event_comments .comment {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-gap: 17px;
+}
+
+.live_event_comments .avatar img{
+    flex:0 0 60px;
+    width: 60px;
+    height: 60px;
+    border-radius:100%;
+}
+@media (max-width:601px) {
+    .live_event_comments .comment {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .live_event_comments .avatar img{
+        flex:0 0 40px;
+        width: 40px;
+        height: 40px;
+    }
+}
+.stream_comment_section {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #939597;
+    margin-bottom: 4px;
+}
+.stream_comment {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #54595F;
+}
+.stream_comment_section .date{
+    color: #939597;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.submit_section {
+    flex:1;
+    display:flex;
+    position:relative;
+    border-top:2px solid #F46852;
+}
+.submit_section textarea {
+    border-radius:0;
+    resize:none;
+    width: 100%;
+    padding-right: 56px;
+}
+.submit_section button {
+    background: 0;
+    padding:0;
+    box-shadow:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:absolute;
+    z-index:5;
+    top:50%;
+    transform:translateY(-50%);
+    right:24px;
+}
+.submit_section button .spinner {
+    display:none;
+}
+.submit_section button:disabled {
+    cursor: not-allowed;
+    opacity: 50%;
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.spinner {
+    animation: rotate 2s linear infinite;
+}
