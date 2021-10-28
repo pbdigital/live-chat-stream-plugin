@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://pbdigital.com.au/
- * @since             1.0.0
+ * @since             1.0.1
  * @package           Live_Chat_Stream
  *
  * @wordpress-plugin
  * Plugin Name:       Live chat Stream
  * Plugin URI:        https://github.com/pbdigital/live-chat-stream-plugin
  * Description:       
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Paul Bright
  * Author URI:        https://pbdigital.com.au/
  * License:           GPL-2.0+
