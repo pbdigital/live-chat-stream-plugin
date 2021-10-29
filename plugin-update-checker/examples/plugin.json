@@ -1,6 +1,6 @@
 {
      "name" : "Live chat Stream",
-     "version" : "1.0.1",
+     "version" : "1.0.2",
      "download_url" : "https://github.com/pbdigital/live-chat-stream-plugin/archive/refs/heads/master.zip",
      "sections" : {
          "description" : "Live chat stream plugin"
