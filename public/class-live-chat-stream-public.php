@@ -73,7 +73,7 @@ class Live_Chat_Stream_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/live-chat-stream-public.css', array(), $this->version."_".mt_rand(), 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/live-chat-stream-public.css', array(), $this->version."_".mt_rand().mt_rand(), 'all' );
 
 	}
 
@@ -96,7 +96,7 @@ class Live_Chat_Stream_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/live-chat-stream-public.js', array( 'jquery' ), $this->version."_".mt_rand(), false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/live-chat-stream-public.js', array( 'jquery' ), $this->version."_".mt_rand().mt_rand(), false );
 
 	}
 
