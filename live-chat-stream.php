@@ -84,7 +84,7 @@ run_live_chat_stream();
 
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/pbdigital/live-chat-stream-plugin.git',
+	'https://github.com/pbdigital/live-chat-stream-plugin',
 	__FILE__,
 	'live-chat-stream'
 );
