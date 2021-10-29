@@ -194,10 +194,46 @@ class Live_Chat_Stream_Loader {
 		return ob_get_clean();
 	}	
 
+	static function pbd_get_live_stream_comments($post_id, $last_id = 0){
+		global $wpdb;
+		$return = array();
+		$comments =  $wpdb->get_results( 
+			"SELECT * FROM {$wpdb->prefix}comments 
+			RIGHT JOIN {$wpdb->prefix}users 
+			ON {$wpdb->prefix}comments.user_id = {$wpdb->prefix}users.ID
+			WHERE comment_post_ID = $post_id
+			AND comment_ID > $last_id
+			AND comment_approved = 1
+			ORDER BY comment_ID DESC
+			");
+		if (!empty($comments)){
+			foreach ($comments as $comment){
+				$return['comments'][] = array(
+					'comment_ID' => $comment->comment_ID,
+					'comment_content' => $comment->comment_content,
+					'comment_date' => $comment->comment_date,
+					'user_id' => $comment->user_id,
+					'name' => $comment->display_name,
+					'avatar' => get_avatar_url( $comment->user_id, array('size'=>60))
+					
+				);
+			}
+			
+			$return['last_id'] = $comments[0]->comment_ID;
+			return $return;
+		}
+		else {
+			$return['comments'] = null;
+			$return['last_id'] = null;
+			return $return;
+		}
+		
+	}
+
 	static function pbd_get_live_event_stream_ajax(){
 		$post_id = $_GET['post_id'];
 		$last_id = $_GET['last_id'];
-		echo json_encode(pbd_get_live_stream_comments($post_id, $last_id ));
+		echo json_encode(self::pbd_get_live_stream_comments($post_id, $last_id ));
 		wp_die();
 	}
 
