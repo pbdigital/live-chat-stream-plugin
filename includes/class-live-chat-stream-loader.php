@@ -148,7 +148,8 @@ class Live_Chat_Stream_Loader {
 			), $atts
 		);
 		global $post;
-		$post_id = $post->ID; 
+		if(!empty($atts["post_id"])) $post_id = $atts["post_id"]; 
+		else $post_id = $post->ID; 
 		ob_start();
 		?>
 		<style>
